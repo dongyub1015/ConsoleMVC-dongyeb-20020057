@@ -1,10 +1,13 @@
+from model.todo_repository import InMemoryTodoRepository
+from view.todo_view import TodoView
+from controller.todo_controller import TodoController
+
+
 class App:
     def __init__(self) -> None:
-        # Phase 5에서 실제 Repository·View·Controller로 교체
-        self._controller = None
+        repo = InMemoryTodoRepository()
+        view = TodoView()
+        self._controller = TodoController(repo, view)
 
     def run(self) -> None:
-        if self._controller is None:
-            print("[Phase 1] Skeleton - not yet implemented.")
-            return
         self._controller.run()
