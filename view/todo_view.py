@@ -8,7 +8,6 @@ class TodoView:
         "  4. 항목 삭제\n"
         "  0. 종료\n"
         "==============================\n"
-        "선택 >> "
     )
 
     def show_menu(self) -> None:
